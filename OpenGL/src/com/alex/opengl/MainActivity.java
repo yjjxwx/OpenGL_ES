@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.alex.opengl.renderer.AbstractRenderer;
-import com.alex.opengl.renderer.LineRenderer;
+import com.alex.opengl.renderer.LineStripRenderer;
 
 public class MainActivity extends Activity {
 	
 	private GLSurfaceView mView = null;
 	
-	private AbstractRenderer mRenderer = new LineRenderer();
+	private AbstractRenderer mRenderer = new LineStripRenderer();
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
