@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.alex.opengl.renderer.AbstractRenderer;
-import com.alex.opengl.renderer.TriangleRenderer;
+import com.alex.opengl.renderer.TriangleConeRenderer;
 
 public class MainActivity extends Activity {
 	
 	private GLSurfaceView mView = null;
 	
-	private AbstractRenderer mRenderer = new TriangleRenderer();
+	private AbstractRenderer mRenderer = new TriangleConeRenderer();
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {

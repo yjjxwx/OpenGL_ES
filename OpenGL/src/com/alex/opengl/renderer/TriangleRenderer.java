@@ -22,8 +22,6 @@ public class TriangleRenderer extends AbstractRenderer {
 		gl.glRotatef(zRotate, 0, 0, 1);
 		
 		float r = 0.5f;
-		float x = 0f, y = 0f, z = 1.5f;
-		float zstep = 0.01f;
 		float [] coords = new float[]{
 				-r, r, 0,
 				-r, -r, 0,

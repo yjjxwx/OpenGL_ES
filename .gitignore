@@ -1,6 +1,4 @@
 #Ignore some file. like eclipse, code block. idea etc.
-*.class
-*.project
 bin/
 .metadata/
 gen/
