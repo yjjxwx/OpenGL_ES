@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.alex.opengl.renderer.AbstractRenderer;
-import com.alex.opengl.renderer.LineStripRenderer;
+import com.alex.opengl.renderer.TriangleRenderer;
 
 public class MainActivity extends Activity {
 	
 	private GLSurfaceView mView = null;
 	
-	private AbstractRenderer mRenderer = new LineStripRenderer();
+	private AbstractRenderer mRenderer = new TriangleRenderer();
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,6 @@ public class MainActivity extends Activity {
         mView.setRenderer(mRenderer);
         mView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
         setContentView(mView);
-        
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
