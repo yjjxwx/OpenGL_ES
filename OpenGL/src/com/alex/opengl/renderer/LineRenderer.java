@@ -1,12 +1,15 @@
 package com.alex.opengl.renderer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLU;
 
 import com.alex.opengl.util.BufferUtil;
 
-public class PointSizeRenderer extends AbstractRenderer {
+public class LineRenderer extends AbstractRenderer {
 
 	@Override
 	public void onDrawFrame(GL10 gl) {
@@ -22,18 +25,21 @@ public class PointSizeRenderer extends AbstractRenderer {
 		gl.glRotatef(zRotate, 0, 0, 1);
 		
 		float r = 0.5f;
-		float x = 0f, y = 0f, z = 1.5f;
-		float zstep = 0.005f;
-		float pointSize = 1.0f;
+		float x = 0f, y = 0f, z = 0f;
+		List<Float> coords = new ArrayList<Float>();
 		for(float alpha = 0f; alpha < Math.PI * 6; alpha += Math.PI/16){
 			x = (float)(r * Math.cos(alpha));
 			y = (float) (r * Math.sin(alpha));
-			z -= zstep;
-			gl.glPointSize(pointSize);
-			pointSize += 0.3;
-			gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.arr2ByteBuffer(new float[]{x,y,z}));
-			gl.glDrawArrays(GL10.GL_POINTS, 0, 1);
+			
+			coords.add(0f);
+			coords.add(0f);
+			coords.add(0f);
+			
+			coords.add(x);
+			coords.add(y);
+			coords.add(z);
 		}
-		
+		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.list2ByteBuffer(coords));
+		gl.glDrawArrays(GL10.GL_LINES, 0, coords.size()/6);
 	}
 }
