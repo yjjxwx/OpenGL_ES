@@ -2,17 +2,17 @@ package com.alex.opengl;
 
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
-import android.opengl.GLSurfaceView.Renderer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
-import com.alex.opengl.renderer.PointRenderer;
+import com.alex.opengl.renderer.AbstractRenderer;
+import com.alex.opengl.renderer.PointSizeRenderer;
 
 public class MainActivity extends Activity {
 	
 	private GLSurfaceView mView = null;
 	
-	private PointRenderer mRenderer = new PointRenderer();
+	private AbstractRenderer mRenderer = new PointSizeRenderer();
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
