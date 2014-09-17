@@ -18,9 +18,8 @@ public class TriangleConeRenderer extends AbstractRenderer {
 		// TODO Auto-generated method stub
 		super.onSurfaceCreated(gl, config);
 		gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
-		gl.glFrontFace(GL10.GL_CCW);
-		gl.glCullFace(GL10.GL_BACK);
-		gl.glEnable(GL10.GL_DEPTH_TEST);
+		
+		
 	}
 	@Override
 	public void onDrawFrame(GL10 gl) {
@@ -81,6 +80,10 @@ public class TriangleConeRenderer extends AbstractRenderer {
 				colorList.add(1.0f);
 			}
 		}
+		gl.glEnable(GL10.GL_DEPTH_TEST);
+		gl.glEnable(GL10.GL_CULL_FACE);
+		gl.glFrontFace(GL10.GL_CCW);
+		gl.glCullFace(GL10.GL_BACK);
 		
 		ByteBuffer cbb = BufferUtil.list2ByteBuffer(colorList);
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.list2ByteBuffer(coords));
@@ -88,7 +91,7 @@ public class TriangleConeRenderer extends AbstractRenderer {
 		gl.glDrawArrays(GL10.GL_TRIANGLE_FAN, 0, coords.size()/3);
 		
 		
-		
+		gl.glCullFace(GL10.GL_FRONT);
 		cbb.position(4);
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.list2ByteBuffer(bottomList));
 		gl.glColorPointer(4, GL10.GL_FLOAT, 0, cbb);
