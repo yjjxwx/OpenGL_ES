@@ -2,3 +2,6 @@
 *.class
 *.project
 bin/
+.metadata/
+gen/
+
