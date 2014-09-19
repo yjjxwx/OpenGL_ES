@@ -56,7 +56,7 @@ public class TriangleConeRenderer extends AbstractRenderer {
 		
 		
 		boolean flag = true;
-		for(float alpha = 0; alpha < Math.PI * 6; alpha += Math.PI/16){
+		for(float alpha = 0; alpha <= Math.PI * 2.125; alpha += Math.PI/8){
 			x = (float)(r * Math.cos(alpha));
 			y = (float) (r * Math.sin(alpha));
 			z = -0.5f;
@@ -85,16 +85,16 @@ public class TriangleConeRenderer extends AbstractRenderer {
 		gl.glFrontFace(GL10.GL_CCW);
 		gl.glCullFace(GL10.GL_BACK);
 		
-		ByteBuffer cbb = BufferUtil.list2ByteBuffer(colorList);
+		ByteBuffer fbb = BufferUtil.list2ByteBuffer(colorList);
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.list2ByteBuffer(coords));
-		gl.glColorPointer(4, GL10.GL_FLOAT, 0, cbb);
+		gl.glColorPointer(4, GL10.GL_FLOAT, 0, fbb);
 		gl.glDrawArrays(GL10.GL_TRIANGLE_FAN, 0, coords.size()/3);
 		
 		
 		gl.glCullFace(GL10.GL_FRONT);
-		cbb.position(4);
+		fbb.position(4);
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.list2ByteBuffer(bottomList));
-		gl.glColorPointer(4, GL10.GL_FLOAT, 0, cbb);
+		gl.glColorPointer(4, GL10.GL_FLOAT, 0, fbb);
 		gl.glDrawArrays(GL10.GL_TRIANGLE_FAN, 0, bottomList.size()/3);
 	}
 }

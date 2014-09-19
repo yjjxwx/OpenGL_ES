@@ -24,4 +24,15 @@ public class BufferUtil {
 		ibb.position(0);
 		return ibb;
 	}
+	
+	public static FloatBuffer list2FloatBuffer(List<Float> list){
+		ByteBuffer ibb = ByteBuffer.allocateDirect(list.size() << 2);
+		ibb.order(ByteOrder.nativeOrder());
+		FloatBuffer fbb = ibb.asFloatBuffer();
+		for(float f: list){
+			fbb.put(f);
+		}
+		ibb.position(0);
+		return fbb;
+	}
 }
