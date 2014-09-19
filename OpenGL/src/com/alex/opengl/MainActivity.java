@@ -6,20 +6,19 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.alex.opengl.renderer.AbstractRenderer;
-import com.alex.opengl.renderer.LineStripRenderer;
-import com.alex.opengl.renderer.StencilRenderer;
+import com.alex.opengl.renderer.SphereRenderer;
 
 public class MainActivity extends Activity {
 	
 	private GLSurfaceView mView = null;
 	
-	private AbstractRenderer mRenderer = new StencilRenderer();
+	private AbstractRenderer mRenderer = new SphereRenderer();
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mView = new GLSurfaceView(this);
-        mView.setEGLConfigChooser(5, 6, 5, 0, 16, 4);
+//        mView.setEGLConfigChooser(5, 6, 5, 0, 16, 4);
         mView.setRenderer(mRenderer);
         mView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
         setContentView(mView);

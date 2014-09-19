@@ -29,7 +29,7 @@ public abstract class AbstractRenderer implements Renderer {
 		gl.glMatrixMode(GL10.GL_PROJECTION);
 		gl.glLoadIdentity();
 		ratio = (float)width/(float)height;
-		gl.glFrustumf(-ratio, ratio,1.0f, -1.0f, 3, 7);
+		gl.glFrustumf(-ratio, ratio, 1.0f, -1.0f, 3, 7);
 	}
 
 	@Override
