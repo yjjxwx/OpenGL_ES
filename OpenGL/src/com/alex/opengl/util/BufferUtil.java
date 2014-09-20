@@ -32,7 +32,7 @@ public class BufferUtil {
 		for(float f: list){
 			fbb.put(f);
 		}
-		ibb.position(0);
+		fbb.position(0);
 		return fbb;
 	}
 }
