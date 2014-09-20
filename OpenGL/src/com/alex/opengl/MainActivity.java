@@ -6,19 +6,19 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.alex.opengl.renderer.AbstractRenderer;
-import com.alex.opengl.renderer.SphereRenderer;
+import com.alex.opengl.renderer.CubeRenderer;
 
 public class MainActivity extends Activity {
 	
 	private GLSurfaceView mView = null;
 	
-	private AbstractRenderer mRenderer = new SphereRenderer();
+	private AbstractRenderer mRenderer = new CubeRenderer();
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mView = new GLSurfaceView(this);
-//        mView.setEGLConfigChooser(5, 6, 5, 0, 16, 4);
+        mView.setEGLConfigChooser(5, 6, 5, 0, 16, 4);
         mView.setRenderer(mRenderer);
         mView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
         setContentView(mView);

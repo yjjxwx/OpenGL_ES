@@ -7,10 +7,14 @@ import java.util.List;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLU;
-import android.util.Log;
 
 import com.alex.opengl.util.BufferUtil;
 
+/**
+ * This renderer is to draw a sphere with line strip.
+ * @author alex
+ *
+ */
 public class SphereRenderer extends AbstractRenderer {
 	
 	@Override

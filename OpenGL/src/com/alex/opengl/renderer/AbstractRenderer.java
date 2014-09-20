@@ -5,6 +5,12 @@ import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLSurfaceView.Renderer;
 
+/**
+ * This abstract renderer is to handle commom operation
+ * when create or change surface view. 
+ * You can extends this abstract renderer just implements
+ * onDrawFrame method.
+ */
 public abstract class AbstractRenderer implements Renderer {
 
 	protected float ratio = 0f;
