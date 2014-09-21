@@ -15,6 +15,13 @@ public abstract class AbstractRenderer implements Renderer {
 	
 	public float zRotate = 0f;
 	
+	public boolean enableAmibentLighting = false;
+	
+	public float globalAmbientR = 0.0f;
+	public float globalAmbientG = 0.0f;
+	public float globalAmbientB = 0.0f;
+	public float globalAmbientA = 1.0f;
+	
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 		// TODO Auto-generated method stub
