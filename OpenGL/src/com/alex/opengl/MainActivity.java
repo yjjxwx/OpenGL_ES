@@ -7,25 +7,22 @@ import android.app.Dialog;
 import android.content.res.Resources;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.alex.opengl.renderer.AbstractRenderer;
-import com.alex.opengl.renderer.LightRenderer;
+import com.alex.opengl.renderer.TextureRenderer;
 
 public class MainActivity extends Activity {
 	
 	private GLSurfaceView mView = null;
 	
-	private AbstractRenderer mRenderer = new LightRenderer();
+	private AbstractRenderer mRenderer = null;
 	
 	private Dialog dialog = null;
 	
@@ -36,6 +33,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         resources = getResources();
         mView = new GLSurfaceView(this);
+        mRenderer = new TextureRenderer(resources);
         mView.setRenderer(mRenderer);
         mView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
         setContentView(mView);
@@ -141,7 +139,8 @@ public class MainActivity extends Activity {
     		mView.requestRender();
     		return true;
     	}
-    	return super.onKeyDown(keyCode, event);
+//    	return super.onKeyDown(keyCode, event);
+    	return true;
     }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

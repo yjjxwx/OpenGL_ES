@@ -39,4 +39,8 @@ public class DrawUtil {
 			gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, coords.size()/3);
 		}
 	}
+	public static void drawRect(GL10 gl, float []  rectCoords){
+		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.arr2FloatBuffer(rectCoords));
+		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, rectCoords.length/3);
+	}
 }

@@ -14,7 +14,7 @@ public class LightRenderer extends AbstractRenderer {
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 		// TODO Auto-generated method stub
 		super.onSurfaceCreated(gl, config);
-		gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
+//		gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
 		gl.glEnable(GL10.GL_DEPTH_TEST);
 		
 	}
@@ -43,10 +43,25 @@ public class LightRenderer extends AbstractRenderer {
 				globalAmbientB,
 				globalAmbientA};
 		gl.glLightModelfv(GL10.GL_LIGHT_MODEL_AMBIENT, BufferUtil.arr2FloatBuffer(globaldAmbients));
+		//Set material use first method
+		float [] materials = {
+				materialR,
+				materialG,
+				materialB,
+				materialA
+		};
+		gl.glMaterialfv(GL10.GL_FRONT_AND_BACK, GL10.GL_AMBIENT_AND_DIFFUSE, BufferUtil.arr2FloatBuffer(materials));
+		
+		//Set material use second method
+		if(enableColorTrack){
+			gl.glEnable(GL10.GL_COLOR_MATERIAL);
+		}else{
+			gl.glDisable(GL10.GL_COLOR_MATERIAL);
+		}
 		//Use ambient light end
 		
-		gl.glColor4f(1.0f, 0f, 0f, 1f);
+		gl.glColor4f(colorTrackR, colorTrackG,
+				colorTrackB, colorTrackA);
 		DrawUtil.drawSphere(gl, 0.5f, 8, 12);
 	}
-
 }

@@ -25,4 +25,33 @@
         android:id="@+id/globalAmbientB"/>
     <include layout="@layout/seekbar"
         android:id="@+id/globalAmbientA"/>
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/material"
+        />
+    <include layout="@layout/seekbar"
+        android:id="@+id/materialR"/>
+    <include layout="@layout/seekbar"
+        android:id="@+id/materialG"/>
+    <include layout="@layout/seekbar"
+        android:id="@+id/materialB"/>
+    <include layout="@layout/seekbar"
+        android:id="@+id/materialA"/>
+    
+     <CheckBox
+        android:id="@+id/enableColorTrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enable_color_track" 
+        />
+      <include layout="@layout/seekbar"
+        android:id="@+id/colorTrackR"/>
+    <include layout="@layout/seekbar"
+        android:id="@+id/colorTrackG"/>
+    <include layout="@layout/seekbar"
+        android:id="@+id/colorTrackB"/>
+    <include layout="@layout/seekbar"
+        android:id="@+id/colorTrackA"/>
 </LinearLayout>
