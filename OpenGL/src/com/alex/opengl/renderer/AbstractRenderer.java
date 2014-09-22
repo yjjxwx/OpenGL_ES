@@ -21,6 +21,24 @@ public abstract class AbstractRenderer implements Renderer {
 	
 	public float zRotate = 0f;
 	
+	public boolean enableAmibentLighting = false;
+	
+	public float globalAmbientR = 0.3f;
+	public float globalAmbientG = 0.3f;
+	public float globalAmbientB = 0.3f;
+	public float globalAmbientA = 1.0f;
+	
+	
+	public float materialR = 0.8f;
+	public float materialG = 0.8f;
+	public float materialB = 0.8f;
+	public float materialA = 0.8f;
+	
+	public boolean enableColorTrack = false;
+	public float colorTrackR = 0.8f;
+	public float colorTrackG = 0.8f;
+	public float colorTrackB = 0.8f;
+	public float colorTrackA = 0.8f;
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 		// TODO Auto-generated method stub

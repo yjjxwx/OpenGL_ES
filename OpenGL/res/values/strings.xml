@@ -3,5 +3,8 @@
 
     <string name="app_name">OpenGL</string>
     <string name="hello_world">Hello world!</string>
-
+	<string name="enable_light">启用光照</string>
+	<string name="global_ambients">全局环境光-----------------------</string>
+	<string name="material">材料反射率-----------------------------</string>
+	<string name="enable_color_track">启用颜色追踪-------------------</string>
 </resources>
