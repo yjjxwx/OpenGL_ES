@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import com.alex.opengl.renderer.AbstractRenderer;
-import com.alex.opengl.renderer.CubeRenderer;
+import com.alex.opengl.renderer.CubeColorRenderer;
 
 public class MainActivity extends Activity {
 	
 	private GLSurfaceView mView = null;
 	
-	private AbstractRenderer mRenderer = new CubeRenderer();
+	private AbstractRenderer mRenderer = new CubeColorRenderer();
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
